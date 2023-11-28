@@ -1,0 +1,225 @@
+{% extends 'BASE.html' %}
+<!-- home.html -->
+{% load static  %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <!-- Your home page content goes here -->
+
+<head>
+  <style>
+    /* Add the following styles to your existing CSS or create a new CSS file */
+
+    /* Combined Header and About Section styles */
+    #header-about {
+        text-align: center;
+        color: #2b1e1e;
+        padding: 100px 0;
+        background-size: cover;
+        position: relative;
+        background-color: #d9d9d9; /* Light gray background color */
+    }
+    
+    #header-about .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(36, 34, 34, 0.377);
+    }
+    
+    #header-about h1, #header-about p {
+        font-size: 3em;
+    }
+    
+    #header-about h2 {
+        margin-top: 30px;
+        font-size: 2em;
+    }
+    
+    
+    /* Slideshow Container */
+    .slideshow-container {
+        position: relative;
+        max-width: 600px; /* Set max-width as needed */
+        margin: auto;
+        border: 5px solid #ddd; /* Add border */
+        border-radius: 10px; /* Add border-radius for a rectangular shape */
+        overflow: hidden;
+      }
+    
+      .mySlides {
+        width: 100%; /* Set width to 100% for consistent sizing */
+        height: auto; /* Maintain aspect ratio */
+        display: none;
+      }
+    
+      .w3-button {
+        position: absolute;
+        top: 50%;
+        font-size: 20px;
+        padding: 16px;
+        border: none;
+        color: white;
+        background-color: black;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    
+      .w3-button:hover {
+        background-color: #555;
+      }
+    
+      .w3-display-left, .w3-display-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        padding: 16px;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    
+      .w3-display-left {
+        left: 0;
+      }
+    
+      .w3-display-right {
+        right: 0;
+      }
+</style>
+</head>
+<!-- Combined Header and About Section -->
+<section id="header-about" class="big-header" style="background-image: url('{% static 'img/bhunga.jpg' %}');">
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>Welcome to our SKV Construction</h1>
+    <p class="lead">Building Your Dreams</p>
+    
+    <!-- Container for multiple images with scrollbar -->
+    <div class="slideshow-container">
+      <img class="mySlides" src="{% static 'img/bhunga.jpg' %}" style="width: 100%; height: 80%;" >
+      <img class="mySlides" src="{% static 'img/house.jpg' %}" style="width: 100%; height: 80%;" >
+      <img class="mySlides" src="{% static 'img/bhunga.jpg' %}" style="width: 100%; height: 80%;" >
+      <img class="mySlides" src="{% static 'img/house.jpg' %}" style="width: 100%; height: 80%;" >
+    
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+    
+    <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+      
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+      
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "block";  
+      }
+    </script>
+  </div>
+</section>
+
+  <!-- Service Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-end mb-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="border-start border-5 border-primary ps-4">
+                    <h6 class="text-body text-uppercase mb-2">Our Services</h6>
+                    <h1 class="display-6 mb-0">Construction And Renovation Solutions</h1>
+                </div>
+            </div>
+            <div class="col-lg-6 text-lg-end wow fadeInUp" data-wow-delay="0.3s">
+                <a class="btn btn-primary py-3 px-5" href="">More Services</a>
+            </div>
+        </div>
+        <div class="row g-4 justify-content-center">
+            {% for service in services %}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{% cycle '0.3s' '0.1s' %}">
+                    <div class="service-item bg-light overflow-hidden h-100">
+                        <a href="{% url 'service_detail' pk=service.pk %}">
+                            <img src="{{ MEDIA_URL }}{{ service.image.url }}" alt="{{ service.title }}">
+                        </a>
+                        <div class="service-text position-relative text-center h-100 p-4">
+                            <h5 class="mb-3">{{ service.title }}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>            
+    </div>
+</div>
+
+ <!-- Appointment Start -->
+ <div class="container-xxl py-5">
+  <div class="container">
+      <div class="row g-5">
+          <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="border-start border-5 border-primary ps-4 mb-5">
+                  <h6 class="text-body text-uppercase mb-2">Appointment</h6>
+                  <h1 class="display-6 mb-0">A Company Involved In Service And Maintenance</h1>
+              </div>
+          </div>
+          <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+              <form method="post" action="{% url 'appointment' %}">
+                  {% csrf_token %}
+                  <div class="row g-3">
+                      <div class="col-sm-6">
+                          <div class="form-floating">
+                              <input type="text" class="form-control bg-light border-0" id="cname" name="cname" placeholder="Customer Name">
+                              <label for="gname">Your Name</label>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-floating">
+                              <input type="email" class="form-control bg-light border-0" id="gmail" name="cmail" placeholder="Customer Email">
+                              <label for="gmail">Your Email</label>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-floating">
+                              <input type="text" class="form-control bg-light border-0" id="cnumber" name="cnumber" placeholder="YOUR NUMBER">
+                              <label for="cname">Your Mobile</label>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-floating">
+                              <input type="text" class="form-control bg-light border-0" id="service_type" name="service_type" placeholder="service type">
+                              <label for="cage">Service Type</label>
+                          </div>
+                      </div>
+                      <div class="col-12">
+                          <div class="form-floating">
+                              <textarea class="form-control bg-light border-0" name="message" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                              <label for="message">Message</label>
+                          </div>
+                      </div>
+                      <div class="col-12">
+                          <button class="btn btn-primary w-100 py-3" type="submit">Get Appointment</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Appointment End -->
+
+
+
+
+  {% endblock %}

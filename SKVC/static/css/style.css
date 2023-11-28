@@ -1,0 +1,305 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Background color for the whole page */
+  }
+
+/* Navbar Styles */
+.navbar {
+    background-color: #343a40; /* Dark background color */
+    padding: 20px; /* Increase the padding for the navbar */
+  }
+  
+  .navbar-brand {
+    font-size: 2em; /* Increase the font size for the brand */
+    color: #ffffff; /* White text color for the brand */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #ffffff; /* White color for the toggler icon */
+  }
+  
+  .navbar-nav {
+    margin-left: auto; /* Push the nav links to the right */
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 20px; /* Adjust the spacing between nav items */
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 1.2em; /* Increase the font size for the nav links */
+    color: #ffffff !important; /* White text color for the nav links */
+  }
+  
+  /* Active link styling */
+  .navbar-nav .nav-item.active .nav-link {
+    color: #28a745 !important; /* Green color for active link */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 767px) {
+    .navbar-nav {
+      text-align: right; /* Align links to the right on small screens */
+    }
+  }
+  
+
+
+
+
+
+
+/* Combined Header and About Section styles */
+#header-about {
+    text-align: center;
+    color: #2b1e1e;
+    padding: 100px 0;
+    background-size: cover;
+    position: relative;
+    background-color: #d9d9d9; /* Light gray background color */
+}
+
+#header-about .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 34, 34, 0.377);
+}
+
+#header-about h1, #header-about p {
+    font-size: 3em;
+}
+
+#header-about h2 {
+    margin-top: 30px;
+    font-size: 2em;
+}
+
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 600px; /* Set max-width as needed */
+    margin: auto;
+    border: 5px solid #ddd; /* Add border */
+    border-radius: 10px; /* Add border-radius for a rectangular shape */
+    overflow: hidden;
+  }
+
+  .mySlides {
+    width: 100%; /* Set width to 100% for consistent sizing */
+    height: auto; /* Maintain aspect ratio */
+    display: none;
+  }
+
+  .w3-button {
+    position: absolute;
+    top: 50%;
+    font-size: 20px;
+    padding: 16px;
+    border: none;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .w3-button:hover {
+    background-color: #555;
+  }
+
+  .w3-display-left, .w3-display-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    padding: 16px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .w3-display-left {
+    left: 0;
+  }
+
+  .w3-display-right {
+    right: 0;
+  }
+
+
+
+
+
+/* Services Section styles */
+.services {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+    height: fit-content;
+    width: 100%;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5em;
+}
+.service-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin-bottom: 30px;
+    height: 100%;
+    background-color: #ffffff; /* White background color */
+}
+.service-card:hover {
+    transform: scale(1.05);
+}
+.service-card img {
+    max-width: 100%;
+    height: 70%;
+    transition: transform 0.3s;
+}
+.service-card:hover img {
+    transform: scale(1.2);
+}
+.service-card h3,
+.service-card p {
+    margin: 0 auto;
+}
+.service-card h3 {
+    margin-top: 10px;
+}
+/* Ensure text doesn't overflow in the service card */
+.service-card p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+
+/* CSS for Service Detail Section */
+#service_details {
+  position: relative;
+  height: 600px; /* Set a fixed height or adjust as needed */
+  background-size: cover;
+  background-position: center;
+}
+
+#service_details .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(70, 64, 64, 0.801); /* Semi-transparent overlay */
+  z-index: 1;
+}
+
+#service_details .col-md-6 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 100%;
+  z-index: 2;
+}
+
+#service_details .col-md-6:hover img {
+  transform: scale(1.2); /* Scale up the image on hover */
+}
+
+
+
+
+
+
+
+
+
+/* Style for Done Projects Section */
+/* CSS for Project Detail Section */
+#project-detail {
+  padding: 50px 0; /* Adjust padding as needed */
+}
+
+#project-detail .col-md-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#projectCarousel {
+  max-width: 100%; /* Make sure the carousel is responsive */
+}
+
+#projectCarousel .carousel-inner {
+  text-align: center;
+}
+
+#projectCarousel .carousel-caption {
+  background-color: #000; /* Black background for details */
+  color: #fff; /* White text color for details */
+  padding: 20px;
+}
+
+#projectCarousel .carousel-caption h3,
+#projectCarousel .carousel-caption p {
+  margin: 0;
+}
+
+#projectCarousel .carousel-control-prev,
+#projectCarousel .carousel-control-next {
+  background-color: #000; /* Black background for navigation buttons */
+  width: 10%; /* Adjust width as needed */
+}
+
+#projectCarousel .carousel-control-prev-icon,
+#projectCarousel .carousel-control-next-icon {
+  filter: invert(1); /* Invert the color of the navigation button icons */
+}
+
+#projectCarousel .carousel-control-prev:hover,
+#projectCarousel .carousel-control-next:hover {
+  background-color: #333; /* Darker color on hover */
+}
+
+
+
+
+
+
+/* Contact Section styles */
+.contact {
+    background-color: #555; /* Dark gray background color */
+    color: #fff;
+    padding: 80px 0;
+}
+.contact h2 {
+    text-align: center;
+    font-size: 2.5em;
+}
+.contact p {
+    font-size: 1.5em;
+}
+
+
+
+
+/* Footer styles */
+footer {
+    background-color: #555;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
