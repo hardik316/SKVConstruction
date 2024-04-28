@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404 ,redirect
 from .models import CarouselSlide
 from .models import *
 from django.http import HttpResponse
+from django.contrib import messages
 
 # Create your views here.
 
@@ -19,6 +20,10 @@ def contactus(request):
 def service(request):
     services = Service.objects.all()
     return render(request, 'service.html', {'services': services})
+
+def aboutus(request):
+    services = Service.objects.all()
+    return render(request, 'about_us.html', {'services': services})
 
 def service_detail(request, pk):
     service = get_object_or_404(Service, pk=pk)
@@ -41,6 +46,9 @@ def appointment(request):
             message=message
         )
         appointment.save()
-
-        return redirect('success_page')
     return render(request, 'index.html')
+
+
+
+
+

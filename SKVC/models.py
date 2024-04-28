@@ -6,6 +6,7 @@ from django.db import models
 
 from django.utils.crypto import get_random_string
 
+
 class Service(models.Model):
     service_id = models.CharField(max_length=20, unique=True)
     title = models.CharField(max_length=255)

@@ -10,7 +10,7 @@
 
 <head>
   <style>
-    /* Add the following styles to your existing CSS or create a new CSS file */
+   
 
     /* Combined Header and About Section styles */
     #header-about {
@@ -53,7 +53,7 @@
     
       .mySlides {
         width: 100%; /* Set width to 100% for consistent sizing */
-        height: auto; /* Maintain aspect ratio */
+        height: 400px; /* Maintain aspect ratio */
         display: none;
       }
     
@@ -94,19 +94,17 @@
 </style>
 </head>
 <!-- Combined Header and About Section -->
-<section id="header-about" class="big-header" style="background-image: url('{% static 'img/bhunga.jpg' %}');">
+<section id="header-about" class="big-header" style="background-image: url('/static/img/bhunga.jpg'); background-size:100% 100%;">
   <div class="overlay"></div>
   <div class="container">
     <h1>Welcome to our SKV Construction</h1>
     <p class="lead">Building Your Dreams</p>
     
     <!-- Container for multiple images with scrollbar -->
-    <div class="slideshow-container">
-      <img class="mySlides" src="{% static 'img/bhunga.jpg' %}" style="width: 100%; height: 80%;" >
-      <img class="mySlides" src="{% static 'img/house.jpg' %}" style="width: 100%; height: 80%;" >
-      <img class="mySlides" src="{% static 'img/bhunga.jpg' %}" style="width: 100%; height: 80%;" >
-      <img class="mySlides" src="{% static 'img/house.jpg' %}" style="width: 100%; height: 80%;" >
-    
+    <div class="slideshow-container "style="border-color:black;">
+      {% for image in carousel_slides %}
+          <img class="mySlides" src="{{ MEDIA_URL }}{{ image.image.url }}" alt=" ">
+      {% endfor %}
       <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
       <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
     </div>
@@ -136,26 +134,26 @@
   <!-- Service Start -->
   <div class="container-xxl py-5">
     <div class="container">
-        <div class="row g-5 align-items-end mb-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="border-start border-5 border-primary ps-4">
+        <div class="row  align-items-end mb-5" >
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s"style="color:rgb(0, 0, 0)">
+                <div class="border-start border-5 border-dark ps-4">
                     <h6 class="text-body text-uppercase mb-2">Our Services</h6>
                     <h1 class="display-6 mb-0">Construction And Renovation Solutions</h1>
                 </div>
             </div>
             <div class="col-lg-6 text-lg-end wow fadeInUp" data-wow-delay="0.3s">
-                <a class="btn btn-primary py-3 px-5" href="">More Services</a>
+                <a class="btn btn-dark py-3 px-5" href="">More Services</a>
             </div>
         </div>
         <div class="row g-4 justify-content-center">
             {% for service in services %}
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{% cycle '0.3s' '0.1s' %}">
-                    <div class="service-item bg-light overflow-hidden h-100">
+                    <div class="service-item  overflow-hidden h-100" style="background-color: #f8f8f8;border-color: #343a40;" >
                         <a href="{% url 'service_detail' pk=service.pk %}">
-                            <img src="{{ MEDIA_URL }}{{ service.image.url }}" alt="{{ service.title }}">
+                            <img src="{{ MEDIA_URL }}{{ service.image.url }}" alt="{{ service.title }}" style="width: 100%;height: 250px;">
                         </a>
-                        <div class="service-text position-relative text-center h-100 p-4">
-                            <h5 class="mb-3">{{ service.title }}</h5>
+                        <div class="service-text position-relative text-center h-100 p-4"style = "border-top: 2px;border-color: #d9d9d9;">
+                            <h5 class="mb-3" style="color: rgb(3, 3, 3); ">{{ service.title }}</h5>
                         </div>
                     </div>
                 </div>
@@ -169,7 +167,7 @@
   <div class="container">
       <div class="row g-5">
           <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="border-start border-5 border-primary ps-4 mb-5">
+              <div class="border-start border-5 border-dark ps-4 mb-5">
                   <h6 class="text-body text-uppercase mb-2">Appointment</h6>
                   <h1 class="display-6 mb-0">A Company Involved In Service And Maintenance</h1>
               </div>
@@ -209,7 +207,7 @@
                           </div>
                       </div>
                       <div class="col-12">
-                          <button class="btn btn-primary w-100 py-3" type="submit">Get Appointment</button>
+                          <button class="btn btn-dark w-100 py-3" type="submit">Get Appointment</button>
                       </div>
                   </div>
               </form>

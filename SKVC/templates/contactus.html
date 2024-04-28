@@ -1,6 +1,6 @@
 
 {% extends 'BASE.html' %}
-<!-- home.html -->
+<!-- contact us -->
 {% load static  %}
 
 
@@ -9,18 +9,19 @@
 {% block content %}
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center py-5">
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style=" height: 300px; background-image: url('/static/img/bhunga.jpg'); background-size: 100% 100%;">
+        <div class="container text-center py-5" style="background-color: rgba(0, 0, 0, 0.5);">
             <h1 class="display-4 text-white animated slideInDown mb-4">Contact Us</h1>
             <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                <ol class="breadcrumb justify-content-center mb-0" >
+                    <li class="breadcrumb-item"><a class="text-white" href={% url 'home' %}>Home</a></li>
                     <li class="breadcrumb-item text-primary active" aria-current="page">Contact Us</li>
                 </ol>
             </nav>
         </div>
     </div>
+    
+    
     <!-- Page Header End -->
 
 
@@ -31,7 +32,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row g-4 align-items-center">
                         <div class="col-sm-6">
-                            <img class="img-fluid" src="{% static 'img/bhunga.jpg' %}" alt="">
+                            <img class="img-fluid" src="{% static 'img/papa.jpeg' %}" alt="" style="height: 300px; width: 300px ;">
                         </div>
                         <div class="col-sm-6">
                             <h3 class="mb-0">Shantilal Vaghamshi</h3>
@@ -45,23 +46,28 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row g-4 align-items-center">
                         <div class="col-sm-6">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid" src="{% static 'img/hardik.jpeg' %}" alt="" style="height: 300px; width: 300px ;" >
                         </div>
                         <div class="col-sm-6">
-                           
+                            <h3 class="mb-0">Hardik Vaghamshi</h3>
+                            <p>Owner</p>
+                            <h6>Contact Details</h6>
+                            <p class="mb-0">Call: +91 9825154001</p>
+                            <p class="mb-0">Email: hardikvaghamshi316@gmail.com</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 450px;">
                     <div class="position-relative h-100">
                         <iframe class="position-relative w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.953914669538!2d70.006694!3d23.104333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c4e437a2602e5%3A0xb6f9e681356b9df7!2s23%C2%B006'15.6%22N%2070%C2%B000'24.1%22E!5e0!3m2!1sen!2sus!4v1649327454053!5m2!1sen!2sus"
                         frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
+
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="border-start border-5 border-primary ps-4 mb-5">
+                    <div class="border-start border-5 border-dark ps-4 mb-5">
                         <h6 class="text-body text-uppercase mb-2">Contact Us</h6>
                         <h1 class="display-6 mb-0">If You Have Any Query, Please Contact Us</h1>
                     </div>
@@ -99,7 +105,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Get Appointment</button>
+                                <button class="btn btn-dark w-100 py-3" type="submit">Get Appointment</button>
                             </div>
                         </div>
                     </form>
