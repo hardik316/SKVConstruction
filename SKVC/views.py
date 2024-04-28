@@ -46,7 +46,8 @@ def appointment(request):
             message=message
         )
         appointment.save()
-    return render(request, 'index.html')
+        return redirect (home)
+    return render (request, 'index.html')
 
 
 
